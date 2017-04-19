@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">Mandy</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="no">No</string>
+    <string name="ok">OK</string>
+
+    <string name="signin">Sign in</string>
+    <string name="signup">Sign up</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="username_short">Username is too short! You need at least 4 characters.</string>
+    <string name="password_short">Password is too short! You need at least 5 characters.</string>
+    <string name="password_invalid">Passwords do not match!</string>
+    <string name="server_not_reachable">Couldn\'t connect to server.</string>
+    <string name="signin_not_correct">Sign in data are not correct.</string>
+    <string name="not_verified">Your account is not verified yet! Please wait until a moderator unlocks you.</string>
+    <string name="username_taken">Your chosen username is already taken.</string>
+
+    <string name="merge">Merge</string>
+    <string name="manifest_tag">Manifest tag</string>
+    <string name="latest_tag">Latest tag</string>
+    <string name="conflicted">Conflicted</string>
+    <string name="merging">Merging</string>
+    <string name="submitting">Submitting</string>
+    <string name="executed_by">Executed by %s</string>
+    <string name="revert">Revert</string>
+    <string name="submit">Submit</string>
+    <string name="repos_conflicted">Some repos are still marked as conflicted. You have to manually merge them and then force push to mergebot branch!</string>
+    <string name="reverting">Reverting</string>
+    <string name="repos_wrong_tag">Some repos don\'t have the latest tag yet.</string>
+    <string name="merge_confirm">Do you really want to start the merging process?</string>
+    <string name="revert_confirm">Do you really want to start the reverting process?</string>
+    <string name="submit_confirm">Do you really want to start the submission process?</string>
+    <string name="latest_tag_submitted">Latest tag has been submitted. Now update the manifest with the same tag!</string>
+    <string name="mod_only">You must be a moderator to execute this!</string>
+
+    <string name="verified_users">Verified users</string>
+    <string name="admin">Admin</string>
+    <string name="moderator">Moderator</string>
+    <string name="verified">Verified</string>
+    <string name="remove">Remove</string>
+    <string name="mod_confirm">Do you really want to change the moderation status?</string>
+    <string name="verify_confirm">Do you really want to change the verification status?</string>
+    <string name="remove_confirm">Do you really want to remove this user?</string>
+    <string name="user">User</string>
+
+    <string name="all_users">All users</string>
+
+    <string name="activities">Activities</string>
+
+    <string name="checkout">Checkout</string>
+
+    <string name="delete_branches">Delete branches</string>
+
+    <string name="logout">Logout</string>
+    <string name="logout_confirm">Do you really want to logout?</string>
+
+    <string name="account_verified">Your account got verified!</string>
+    <string name="new_tag_found">New tag %s found.</string>
+    <string name="tag_mergeable">%s is now mergeable.</string>
+    <string name="start_merging">%1$s started merging %2$s.</string>
+    <string name="finished_merged">%s has been merged.</string>
+    <string name="start_reverting">%1$s started reverting %2$s.</string>
+    <string name="finished_reverted">%s has been reverted.</string>
+    <string name="start_submitting">%1$s started submitting %2$s.</string>
+    <string name="finished_submitted">%s has been submitted.</string>
+</resources>

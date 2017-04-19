@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "566491087050",
+    "firebase_url": "https://mandy-e92b9.firebaseio.com",
+    "project_id": "mandy-e92b9",
+    "storage_bucket": "mandy-e92b9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:566491087050:android:ed84090e5f9c9cbd",
+        "android_client_info": {
+          "package_name": "co.aospa.mandy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "566491087050-m4crj8o4napnasbc23a12ucu6akcf6e0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.aospa.mandy",
+            "certificate_hash": "c34bd6492e928f208a141b06401019aae9bb0340"
+          }
+        },
+        {
+          "client_id": "566491087050-cj9ic580mslgtdbksjr12433lgkg761d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzMNOtRq03iQvZxyWyo0qtx7itvlywolw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "566491087050-cj9ic580mslgtdbksjr12433lgkg761d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
