@@ -120,9 +120,14 @@ public class MandyApi {
     }
 
     public void disconnect() {
-        if (mConnection != null) {
-            mConnection.disconnect();
-        }
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                if (mConnection != null) {
+                    mConnection.disconnect();
+                }
+            }
+        }).start();
     }
 
 }

@@ -41,7 +41,8 @@ public class FirebaseNotification extends FirebaseMessagingService {
         String data = remoteMessage.getData().get("data");
 
         User signedInUser = User.getCached(this);
-        if (signedInUser == null || !signedInUser.valid() || !signedInUser.mName.equals(belongto)) {
+        if (signedInUser == null || !signedInUser.valid()
+                || !signedInUser.mName.equalsIgnoreCase(belongto)) {
             return;
         }
 

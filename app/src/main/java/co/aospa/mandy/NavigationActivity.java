@@ -75,10 +75,13 @@ public class NavigationActivity extends AppCompatActivity {
     private DrawerLayout mDrawer;
     private int mCurrentItem;
     private User mUser;
+    private boolean mAllowCommit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mAllowCommit = true;
+
         setContentView(R.layout.activity_navigation);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -168,8 +171,10 @@ public class NavigationActivity extends AppCompatActivity {
         if (fragment == null) {
             fragment = Fragment.instantiate(this, item.mFragmentClass.getName());
         }
-        fragmentManager.beginTransaction().replace(R.id.content_view, fragment,
-                item.mFragmentClass.getName()).commitAllowingStateLoss();
+        if (mAllowCommit) {
+            fragmentManager.beginTransaction().replace(R.id.content_view, fragment,
+                    item.mFragmentClass.getName()).commit();
+        }
         mDrawer.closeDrawer(GravityCompat.START);
     }
 
@@ -202,6 +207,12 @@ public class NavigationActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onResumeFragments() {
+        super.onResumeFragments();
+        mAllowCommit = true;
+    }
+
+    @Override
     public void onBackPressed() {
         if (mDrawer.isDrawerOpen(GravityCompat.START)) {
             mDrawer.closeDrawer(GravityCompat.START);
@@ -213,6 +224,8 @@ public class NavigationActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
+        mAllowCommit = false;
+
         outState.putInt("current_item", mCurrentItem);
     }
 }
