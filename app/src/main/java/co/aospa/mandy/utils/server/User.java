@@ -63,8 +63,7 @@ public class User {
     public User(String name, String password, String firebaseKey) {
         mName = name;
         mPassword = password;
-        mFirebaseKey = new String[1];
-        mFirebaseKey[0] = firebaseKey;
+        mFirebaseKey = new String[]{firebaseKey};
     }
 
     @Override

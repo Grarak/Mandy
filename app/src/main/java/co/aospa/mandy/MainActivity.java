@@ -17,7 +17,6 @@ import android.view.animation.AnimationUtils;
 import com.google.firebase.iid.FirebaseInstanceId;
 
 import co.aospa.mandy.fragments.BaseFragment;
-import co.aospa.mandy.services.FirebaseIDService;
 import co.aospa.mandy.utils.Utils;
 import co.aospa.mandy.utils.server.MandyApi;
 import co.aospa.mandy.utils.server.Status;
@@ -248,9 +247,6 @@ public class MainActivity extends AppCompatActivity {
                     public void onReturn(String output, int code) {
                         User user = new User(output);
                         if (user.valid()) {
-                            if (signin) {
-                                FirebaseIDService.sendToken(user);
-                            }
                             user.cache(getActivity());
                             if (user.mVerified) {
                                 activity.startNavigation(user);

@@ -11,6 +11,8 @@ import android.support.v4.app.NotificationCompat;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
+import java.util.Map;
+
 import co.aospa.mandy.BuildConfig;
 import co.aospa.mandy.R;
 import co.aospa.mandy.utils.server.MandyStatus;
@@ -36,13 +38,14 @@ public class FirebaseNotification extends FirebaseMessagingService {
     public void onMessageReceived(RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
 
-        String code = remoteMessage.getData().get("code");
-        String belongto = remoteMessage.getData().get("belongto");
-        String data = remoteMessage.getData().get("data");
+        Map<String, String> remoteData = remoteMessage.getData();
+        String code = remoteData.get("code");
+        String belongto = remoteData.get("belongto");
+        String data = remoteData.get("data");
 
         User signedInUser = User.getCached(this);
         if (signedInUser == null || !signedInUser.valid()
-                || !signedInUser.mName.equalsIgnoreCase(belongto)) {
+                || !signedInUser.mName.equals(belongto)) {
             return;
         }
 

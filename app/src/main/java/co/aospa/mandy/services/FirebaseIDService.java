@@ -24,8 +24,7 @@ public class FirebaseIDService extends FirebaseInstanceIdService {
 
     public static void sendToken(User user) {
         user.mName = null;
-        user.mFirebaseKey = new String[1];
-        user.mFirebaseKey[0] = FirebaseInstanceId.getInstance().getId();
+        user.mFirebaseKey = new String[]{FirebaseInstanceId.getInstance().getId()};
 
         MandyApi mandyApi = new MandyApi("account/firebasekey", null);
         mandyApi.post(user.toString(), user.mApiToken, null);
