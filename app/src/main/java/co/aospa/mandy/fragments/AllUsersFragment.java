@@ -5,6 +5,9 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import co.aospa.mandy.NavigationActivity;
@@ -73,6 +76,13 @@ public class AllUsersFragment extends RecyclerViewFragment implements UserView.U
     private void setup(Users users) {
         clearItems();
 
+        List<User> userslist = Arrays.asList(users.mUsers);
+        Collections.sort(userslist, new Comparator<User>() {
+            @Override
+            public int compare(User user, User t1) {
+                return user.mName.toLowerCase().compareTo(t1.mName.toLowerCase());
+            }
+        });
         for (User user : users.mUsers) {
             UserView userView = new UserView();
             userView.setUsers(getUser(), user, this);
